@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Text Sender Extension",
+  "version": "1.0",
+  "description": "Send text to Flask server",
+  "permissions": [
+    "activeTab",
+    "http://localhost:5000/receive_text/",
+    "scripting",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "http://localhost:5000/"
+  ]
+}
