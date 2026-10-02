@@ -1,12 +1,13 @@
 from flask import Flask, request, send_file
 from PIL import Image
 import io
+import os
 import base64
 import google.generativeai as genai
 from gtts import gTTS
 
-# Or use `os.getenv('GOOGLE_API_KEY')` to fetch an environment variable.
-GOOGLE_API_KEY="REDACTED"
+# Anahtar koda yazılmaz: GOOGLE_API_KEY ortam değişkeninden okunur (yoksa KeyError ile hemen durur).
+GOOGLE_API_KEY = os.environ["GOOGLE_API_KEY"]
 
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-pro-vision')
